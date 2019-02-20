@@ -5,20 +5,18 @@ title: Setup
 
 > ## Data
 >
-> The data for this lesson is a part of the Data Carpentry Social Sciences
-> workshop. It is a teaching version of the Studying African Farmer-Led
-> Irrigation (SAFI) database. The SAFI dataset represents interviews of farmers
-> in two countries in eastern sub-Saharan Africa (Mozambique and Tanzania).
-> These interviews were conducted between November 2016 and June 2017 and probed
-> household features (e.g. construction materials used, number of household
-> members), agricultural practices (e.g. water usage), and assets (e.g. number
-> and types of livestock).
-> 
-> The data used in this lesson
-> is a subset of the teaching version that has been intentionally 'messed up'
-> for this lesson.
-> 
-> **Download** the data file to your computer by [clicking this link](https://ndownloader.figshare.com/files/11502815). (direct link: <https://ndownloader.figshare.com/files/11502815>)
+> The data for this lesson is a part of the Edmonton Open Data Catalogue.
+> The data represent the top ten books with the highest number of holds
+> for several weeks since 2015. The data are organized by the home branch
+> of the customers requesting the holds (e.g., top 10 from Woodcroft,
+> top 10 from Jasper Place, etc.).
+>
+> Information about the data can be found at 
+> <https://data.edmonton.ca/Community-Centres/Most-Popular-Books-by-Branch-Edmonton-Public-Libra/qdgm-hex6>.
+>
+> **A CSV file of the page can be downloaded from the Edmonton Open Data Portal here**:
+>
+> **<https://data.edmonton.ca/api/views/qdgm-hex6/rows.csv?accessType=DOWNLOAD>**
 {: .prereq}
 
 

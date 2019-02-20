@@ -3,6 +3,12 @@ layout: lesson
 root: .
 ---
 
+> ## Attribution
+> This workshop uses the
+> [Data Cleaning with OpenRefine for Social Scientists](http://www.datacarpentry.org/openrefine-socialsci/)
+> course from Data Carpentry as it's basis.
+{: .callout}
+
 A part of the data workflow is preparing the data for analysis. Some of this
 involves data cleaning, where errors in the data are identifed and corrected or
 formatting made consistent. This step must be taken with the same care and
@@ -20,7 +26,7 @@ edits by hand.
 
 > ## Getting Started
 >
-> Data Carpentry's teaching is hands-on, so participants are encouraged to use
+> This workshop is modeled after the methodologies of Software/Data Carpentry: the teaching is hands-on, so participants are encouraged to use
 > their own computers to ensure the proper setup of tools for an efficient 
 > workflow.
 >
