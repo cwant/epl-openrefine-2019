@@ -30,20 +30,17 @@ In Windows, you can start the OpenRefine program by double-clicking on the openr
 OpenRefine can import a variety of file types, including tab separated (`tsv`), comma separated (`csv`), Excel (`xls`, `xlsx`), JSON, XML, RDF as XML, Google Spreadsheets. See the [OpenRefine Importers page](https://github.com/OpenRefine/OpenRefine/wiki/Importers) for more information.
 
 In this first step, we'll browse our computer to the sample data file for this lesson.
-In this case, we will be using data obtained from interviews of farmers in two countries in eastern sub-Saharan Africa (Mozambique and Tanzania).
-Instructions on downloading the data are available
+In this case, we will be using data on the top requested books from the Edmonton Public Library. Instructions on downloading the data are available
 [here]({{site.baseurl}}/setup.html).
 
 Once OpenRefine is launched in your browser, the left margin has options to `Create Project`, `Open Project`, or `Import Project`. Here we will create a new project:
 
-1\. Click `Create Project` and select `Get data from` `This Computer`.
-2\. Click `Choose Files` and select the file `SAFI_messy_openrefine.csv`. Click `Open` or double-click on the filename.
-3\. Click `Next>>` under the browse button to upload the data into OpenRefine.
-4\. OpenRefine gives you a preview - a chance to show you it understood the file. If, for example, your file was really tab-delimited, the preview might look strange, you would choose the correct separator in the box shown and click `Update Preview` (bottom left). If this is the wrong file, click `<<Start Over` (upper left).  There are also options to indicate whether the dataset has column headers included and whether OpenRefine should skip a number of rows before reading the data.
-
-![Parse Options](../fig/OR_01_parse_options.png)
-
-5\. If all looks well, click `Create Project>>` (upper right).
+1. Click `Create Project` and select `Get data from` `This Computer`.
+2. Click `Choose Files` and select the file `Most_Popular_Books_by_Branch___Edmonton_Public_Library.csv`. Click `Open` or double-click on the filename.
+3. Click `Next>>` under the browse button to upload the data into OpenRefine.
+4. OpenRefine gives you a preview - a chance to show you it understood the file. If, for example, your file was really tab-delimited, the preview might look strange, you would choose the correct separator in the box shown and click `Update Preview` (bottom left). If this is the wrong file, click `<<Start Over` (upper left).  There are also options to indicate whether the dataset has column headers included and whether OpenRefine should skip a number of rows before reading the data.
+  ![Parse Options](../fig/OR_01_parse_options.png)
+5. If all looks well, click `Create Project>>` (upper right).
 
 Note that at step 1, you could upload data in a standard form from a web address by selecting `Get data from` `Web Addresses (URLs)`. However, this won't work for all URLs.
 
@@ -58,43 +55,61 @@ Facets are one of the most useful features of OpenRefine and can help both get a
 
 A 'Facet' groups all the like values that appear in a column, and then allow you to filter the data by these values and edit values across many records at the same time.
 
+Although you may not be familiar with the term 'facet', you have most likely experienced this kind
+of filtering before. Two great websites that offer searching using facets:
+
+* <https://epl.ca>
+* <https://amazon.ca>
+
 One type of Facet is called a 'Text facet'. This groups all the identical text values in a column and lists each value with the number of records it appears in. The facet information always appears in the left hand panel in the OpenRefine interface.
 
-Here we will use faceting to look for potential errors in data entry in the `village` column.
+Here we will use faceting to look for potential errors in data entry in the `Branch Name` column. We know for a fact that there are only 22 branches at EPL that have participated in this data set.
 
-1. Scroll over to the `village` column.
+1. Scroll over to the `Branch Name` column.
 2. Click the down arrow and choose `Facet` > `Text facet`.
-3. In the left panel, you'll now see a box containing every unique value in the `village` column
+3. In the left panel, you'll now see a box containing every unique value in the `Branch Name` column
 along with a number representing how many times that value occurs in the column.
-4. Try sorting this facet by name and by count. Do you notice any problems with the data? What are they?
-5. Hover the mouse over one of the names in the `Facet` list. You should see that you have an `edit` function available.
-6. You could use this to fix an error immediately, and OpenRefine will ask whether you want to make the same correction to every value it finds like that one. But OpenRefine offers even better ways to find and fix these errors, which we'll use instead. We'll learn about these when we talk about clustering.
+4. Try sorting this facet by name and by count.
 
-> ## Solution
-> - `Chirdozo` is likely a mis-entry of `Chirodzo`.
-> - `Ruca` is likely a mis-entry of `Ruaca`.
-> - `Ruaca - Nhamuenda` and `Ruaca-Nhamuenda` refer to the same place (differ only by spaces around the hyphen). You might also wonder if both of these are the same as `Ruaca`. We will see how to correct these misspelled and mistyped entries in a later exercise.
-> - The entry `49` is almost certainly an error but you will not be able to fix it by reference to other data.
-{: .solution}
+> ## Exercise
+> Do you notice any problems with the data? What are they?
+> > ## Solution
+> > - There are 48 different values ... but only 22 branches!
+> > - `Calder Branch` is likely the same branch as `Calder`.
+> > - `Woodcroft Branch` is likely the same branch as both `Woodcroft (Westmount)` and `Woodcroft (Westmount) Branch`.
+> > - `MacEwan Lending Machine` refers to the same place as `MacEwan University` and `MacEwan University Lending Machine`.
+> > - There are `1230` rows with an empty branch name.
+> > - and ...
+> {: .solution}
+{: .challenge}
+
+Hover the mouse over one of the names in the `Facet` list. You should see that you have an `edit` function available.
+
+You could use this to fix an error immediately, and OpenRefine will ask whether you want to make the same correction to every value it finds like that one. But OpenRefine offers even better ways to find and fix these errors, which we'll use instead. We'll learn about these when we talk about clustering.
 
 > ## Exercise
 >
-> 1. Using faceting, find out how many different `interview_date` values there are in the survey results.
+> 1. Using faceting, find out how many different `As of Date` values there are in the data set.
 >
 > 2. Is the column formatted as Text or Date?
 >
-> 3. Use faceting to produce a timeline display for `interview_date`. You will need to use `Edit cells` > `Common transforms` > `To date` to convert this column to dates.
+> 3. Use faceting to produce a timeline display for `As of Date`. You will need to use `Edit cells` > `Common transforms` > `To date` to convert this column to dates.
 >
-> 4. During what period were most of the interviews collected?
+> 4. What are the first and last weeks that data was collected? To answer this more easily, it may be useful to create a second facet on the `As of Date` column. Use the `Custom Text Facet` with the expression `value.toString()` to get something that shows the individual unique values of the data better.
+>
+> 5. Are there any periods where data was not collected?
 >
 > > ## Solution
 > >
-> > For the column `interview_date` do `Facet` > `Text facet`. A box will appear in the left panel showing that there are 19 unique entries in
+> > For the column `As of Date` do `Facet` > `Text facet`. A box will appear in the left panel showing that there are 164 unique entries in
 > > this column.
 > > By default, the column `interview_date` is formatted as Text. You can change the format by doing `Edit cells` > `Common transforms` >
 > > `To date`.  Notice the the values in the column turn green. Doing `Facet` > `Timeline facet` creates a box in the left panel that shows a histogram of the number of entries for each date.
 > >
-> > Most of the data was collected in November of 2016.
+> > Adding the custom text facet as above, we can see the individual dates inside any selection on the timeline facet.
+> > The first data collected was from February 2015, and the most recent data is from October 2018.
+> > 
+> > Notice there are holes in the data for late 2016 and the early half of 2017. 
 > {: .solution}
 {: .challenge}
 
@@ -117,6 +132,17 @@ along with a number representing how many times that value occurs in the column.
 > * Text length facet - creates a numeric facet based on the length (number of characters) of the text in each row for the selected column. This can be useful for spotting incorrect or unusual data in a field where specific lengths are expected (e.g. if the values are expected to be years, any row with a text length more than 4 for that column is likely to be incorrect)
 > * Facet by blank - a binary facet of 'true' or 'false'. Rows appear in the 'true' facet if they have no data present in that column. This is useful when looking for rows missing key data.
 {: .callout}
+
+> ## Exercise
+> Add a text facet on the 'Branch Name' column on top of the 'As of Date' timeline
+> facet construced above. Do you see any patterns on the timeline graph when looking
+> at branches with similar names?
+> > ## Solution
+> > Quite ofter the coding of branch name will change over time.
+> > For example, `Calder Branch` is used in earlier data records in the set, whereas
+> > `Calder` is used in later data samples.
+> {: .solution}
+{: .challenge}
 
 ## Using clustering to detect possible typing errors
 

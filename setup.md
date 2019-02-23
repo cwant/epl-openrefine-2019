@@ -46,11 +46,8 @@ selecting “Extract…”. Name that directory something like OpenRefine.
 - Check that you have Firefox or Chrome browsers installed and set as your 
 default browser. OpenRefine runs in your default browser. It will not run correctly in Internet Explorer.
 - Download software from [http://openrefine.org](http://openrefine.org)
-- Unzip the downloaded file into a directory by double-clicking it. Name 
-that directory something like OpenRefine.
-- Go to your newly created OpenRefine directory.
-- Launch OpenRefine
-- Drag icon into Applications folder, and Ctrl-click/Open… it. 
+- Open the dmg file and, drag icon into the Applications folder.
+- Double click OpenRefine
 - If you are using a different browser, or OpenRefine does not automatically open for you, point your browser at http://127.0.0.1:3333/ or http://localhost:3333 to launch the program.
 
 #### Linux
