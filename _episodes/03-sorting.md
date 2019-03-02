@@ -1,7 +1,7 @@
 ---
 title: "Sorting data with OpenRefine"
-teaching: 10
-exercises: 10
+teaching: 5
+exercises: 5
 questions:
 - "How can we sort our data?"
 objectives:
