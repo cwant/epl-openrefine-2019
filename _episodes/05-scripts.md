@@ -26,8 +26,6 @@ This gives you a quick way to clean all of your related data.
 
 1. In the `Undo / Redo` section, click `Extract...`, and select the steps that you want to apply to other datasets by clicking the check boxes.
 
-![History](../fig/history.png)
-
 2. Copy the code from the right hand panel and paste it into a text editor (like NotePad on Windows or TextEdit on Mac). Make sure it saves as a plain text file. In TextEdit, do this by selecting `Format` > `Make plain text` and save the file as a `.txt` file.
 
 ## Importing a script to use against another dataset
